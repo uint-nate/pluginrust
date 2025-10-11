@@ -11,6 +11,7 @@ fn windows() {
         "default",
         ".windows/pluginauthenticator.winmd",
         "--sys",
+        "--sys-fn-ptrs",
         "--filter",
         "Windows.PluggablePasskeys",
         "--out",
