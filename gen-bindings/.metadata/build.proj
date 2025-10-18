@@ -6,13 +6,13 @@
     <PropertyGroup Label="Globals">
 	    <OutputWinmd>../.windows/pluginauthenticator.winmd</OutputWinmd>
         <WinmdVersion>255.255.255.255</WinmdVersion>
-        <AdditionalIncludes>webauthn/experimental</AdditionalIncludes>
+        <AdditionalIncludes>webauthn</AdditionalIncludes>
         <SdkIncRoot>obj\CompiledHeaders</SdkIncRoot>
     </PropertyGroup>
     <ItemGroup>
-        <Idls Include="webauthn\experimental\pluginauthenticator.idl" />
+        <Idls Include="webauthn\pluginauthenticator.idl" />
         <Partition Include="pluginauthenticator.cpp">
-            <TraverseFiles>webauthn/experimental/webauthnpriv.h;$(CompiledHeadersDir)\pluginauthenticator.h</TraverseFiles>
+            <TraverseFiles>webauthn/webauthn.h;webauthn/webauthnplugin.h;$(CompiledHeadersDir)\pluginauthenticator.h</TraverseFiles>
             <Namespace>Windows.PluggablePasskeys</Namespace>
             <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
         </Partition>

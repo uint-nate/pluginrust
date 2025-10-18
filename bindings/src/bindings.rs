@@ -10,71 +10,6 @@
 
 pub mod Windows {
     pub mod PluggablePasskeys {
-        pub type EXPERIMENTAL_WebAuthNDecodeGetAssertionRequest = unsafe extern "system" fn(cbencoded : u32, pbencoded : *const u8, ppgetassertionrequest : *mut *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNDecodeGetAssertionRequest(cbencoded : u32, pbencoded : *const u8, ppgetassertionrequest : *mut *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNDecodeMakeCredentialRequest = unsafe extern "system" fn(cbencoded : u32, pbencoded : *const u8, ppmakecredentialrequest : *mut *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNDecodeMakeCredentialRequest(cbencoded : u32, pbencoded : *const u8, ppmakecredentialrequest : *mut *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNEncodeGetAssertionResponse = unsafe extern "system" fn(pgetassertionresponse : *const *const _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE, pcbresp : *mut u32, ppbresp : *mut *mut u8) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNEncodeGetAssertionResponse(pgetassertionresponse : *const *const _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE, pcbresp : *mut u32, ppbresp : *mut *mut u8) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNEncodeMakeCredentialResponse =
-            unsafe extern "system" fn(
-                pcredentialattestation: *const WEBAUTHN_CREDENTIAL_ATTESTATION,
-                pcbresp: *mut u32,
-                ppbresp: *mut *mut u8,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNEncodeMakeCredentialResponse(pcredentialattestation : *const WEBAUTHN_CREDENTIAL_ATTESTATION, pcbresp : *mut u32, ppbresp : *mut *mut u8) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNFreeDecodedGetAssertionRequest =
-            unsafe extern "system" fn(
-                pgetassertionrequest: *const _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST,
-            );
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNFreeDecodedGetAssertionRequest(pgetassertionrequest : *const _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST));
-        pub type EXPERIMENTAL_WebAuthNFreeDecodedMakeCredentialRequest = unsafe extern "system" fn(pmakecredentialrequest : *const _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST) ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNFreeDecodedMakeCredentialRequest(pmakecredentialrequest : *const _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST));
-        pub type EXPERIMENTAL_WebAuthNIsUserVerifyingNativePlatformAuthenticatorAvailable =
-            unsafe extern "system" fn(
-                pbisuserverifyingnativeplatformauthenticatoravailable: *mut windows_sys::core::BOOL,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNIsUserVerifyingNativePlatformAuthenticatorAvailable(pbisuserverifyingnativeplatformauthenticatoravailable : *mut windows_sys::core::BOOL) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginAddAuthenticator = unsafe extern "system" fn(ppluginaddauthenticatoroptions : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS, pppluginaddauthenticatorresponse : *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginAddAuthenticator(ppluginaddauthenticatoroptions : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS, pppluginaddauthenticatorresponse : *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginAuthenticatorAddCredentials =
-            unsafe extern "system" fn(
-                pcredentialdetailslist: *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginAuthenticatorAddCredentials(pcredentialdetailslist : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginAuthenticatorGetAllCredentials = unsafe extern "system" fn(pwszpluginclsid : windows_sys::core::PCWSTR, ppcredentialdetailslist : *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginAuthenticatorGetAllCredentials(pwszpluginclsid : windows_sys::core::PCWSTR, ppcredentialdetailslist : *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginAuthenticatorRemoveAllCredentials =
-            unsafe extern "system" fn(
-                pwszpluginclsid: windows_sys::core::PCWSTR,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginAuthenticatorRemoveAllCredentials(pwszpluginclsid : windows_sys::core::PCWSTR) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginAuthenticatorRemoveCredentials =
-            unsafe extern "system" fn(
-                pcredentialdetailslist: *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginAuthenticatorRemoveCredentials(pcredentialdetailslist : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginFreeAddAuthenticatorResponse = unsafe extern "system" fn(ppluginaddauthenticatorresponse : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE) ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginFreeAddAuthenticatorResponse(ppluginaddauthenticatorresponse : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE));
-        pub type EXPERIMENTAL_WebAuthNPluginFreePerformUvResponse = unsafe extern "system" fn(
-            pppluginperformuvresponse: *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE,
-        );
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginFreePerformUvResponse(pppluginperformuvresponse : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE));
-        pub type EXPERIMENTAL_WebAuthNPluginGetAuthenticatorState =
-            unsafe extern "system" fn(
-                pwszpluginclsid: windows_sys::core::PCWSTR,
-                pluginauthenticatorstate: *mut _EXPERIMENTAL_PLUGIN_AUTHENTICATOR_STATE,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginGetAuthenticatorState(pwszpluginclsid : windows_sys::core::PCWSTR, pluginauthenticatorstate : *mut _EXPERIMENTAL_PLUGIN_AUTHENTICATOR_STATE) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginPerformUv = unsafe extern "system" fn(ppluginperformuv : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV, pppluginperformuvrespose : *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginPerformUv(ppluginperformuv : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV, pppluginperformuvrespose : *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginRemoveAuthenticator =
-            unsafe extern "system" fn(
-                pwszpluginclsid: windows_sys::core::PCWSTR,
-            ) -> windows_sys::core::HRESULT;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginRemoveAuthenticator(pwszpluginclsid : windows_sys::core::PCWSTR) -> windows_sys::core::HRESULT);
-        pub type EXPERIMENTAL_WebAuthNPluginUpdateAuthenticatorDetails = unsafe extern "system" fn(ppluginupdateauthenticatordetails : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS) -> windows_sys::core::HRESULT ;
-        windows_link::link!("webauthn.dll" "system" fn EXPERIMENTAL_WebAuthNPluginUpdateAuthenticatorDetails(ppluginupdateauthenticatordetails : *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS) -> windows_sys::core::HRESULT);
         pub type WebAuthNAuthenticatorGetAssertion =
             unsafe extern "system" fn(
                 hwnd: super::Win32::Foundation::HWND,
@@ -84,19 +19,47 @@ pub mod Windows {
                 ppwebauthnassertion: *mut *mut WEBAUTHN_ASSERTION,
             ) -> windows_sys::core::HRESULT;
         windows_link::link!("webauthn.dll" "system" fn WebAuthNAuthenticatorGetAssertion(hwnd : super::Win32::Foundation:: HWND, pwszrpid : windows_sys::core::PCWSTR, pwebauthnclientdata : *const WEBAUTHN_CLIENT_DATA, pwebauthngetassertionoptions : *const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS, ppwebauthnassertion : *mut *mut WEBAUTHN_ASSERTION) -> windows_sys::core::HRESULT);
-        pub type WebAuthNAuthenticatorMakeCredential = unsafe extern "system" fn(hwnd : super::Win32::Foundation:: HWND, prpinformation : *const WEBAUTHN_RP_ENTITY_INFORMATION, puserinformation : *const WEBAUTHN_USER_ENTITY_INFORMATION, ppubkeycredparams : *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS, pwebauthnclientdata : *const WEBAUTHN_CLIENT_DATA, pwebauthnmakecredentialoptions : *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS, ppwebauthncredentialattestation : *mut *mut WEBAUTHN_CREDENTIAL_ATTESTATION) -> windows_sys::core::HRESULT ;
+        pub type WebAuthNAuthenticatorMakeCredential = unsafe extern "system" fn ( hwnd : super::Win32::Foundation:: HWND , prpinformation : *const WEBAUTHN_RP_ENTITY_INFORMATION , puserinformation : *const WEBAUTHN_USER_ENTITY_INFORMATION , ppubkeycredparams : *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS , pwebauthnclientdata : *const WEBAUTHN_CLIENT_DATA , pwebauthnmakecredentialoptions : *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS , ppwebauthncredentialattestation : *mut *mut WEBAUTHN_CREDENTIAL_ATTESTATION ) -> windows_sys::core::HRESULT ;
         windows_link::link!("webauthn.dll" "system" fn WebAuthNAuthenticatorMakeCredential(hwnd : super::Win32::Foundation:: HWND, prpinformation : *const WEBAUTHN_RP_ENTITY_INFORMATION, puserinformation : *const WEBAUTHN_USER_ENTITY_INFORMATION, ppubkeycredparams : *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS, pwebauthnclientdata : *const WEBAUTHN_CLIENT_DATA, pwebauthnmakecredentialoptions : *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS, ppwebauthncredentialattestation : *mut *mut WEBAUTHN_CREDENTIAL_ATTESTATION) -> windows_sys::core::HRESULT);
         pub type WebAuthNCancelCurrentOperation =
             unsafe extern "system" fn(
                 pcancellationid: *const windows_sys::core::GUID,
             ) -> windows_sys::core::HRESULT;
         windows_link::link!("webauthn.dll" "system" fn WebAuthNCancelCurrentOperation(pcancellationid : *const windows_sys::core::GUID) -> windows_sys::core::HRESULT);
+        pub type WebAuthNDecodeGetAssertionRequest =
+            unsafe extern "system" fn(
+                cbencoded: u32,
+                pbencoded: *const u8,
+                ppgetassertionrequest: *mut *mut _WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNDecodeGetAssertionRequest(cbencoded : u32, pbencoded : *const u8, ppgetassertionrequest : *mut *mut _WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST) -> windows_sys::core::HRESULT);
+        pub type WebAuthNDecodeMakeCredentialRequest =
+            unsafe extern "system" fn(
+                cbencoded: u32,
+                pbencoded: *const u8,
+                ppmakecredentialrequest: *mut *mut _WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNDecodeMakeCredentialRequest(cbencoded : u32, pbencoded : *const u8, ppmakecredentialrequest : *mut *mut _WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST) -> windows_sys::core::HRESULT);
         pub type WebAuthNDeletePlatformCredential =
             unsafe extern "system" fn(
                 cbcredentialid: u32,
                 pbcredentialid: *const u8,
             ) -> windows_sys::core::HRESULT;
         windows_link::link!("webauthn.dll" "system" fn WebAuthNDeletePlatformCredential(cbcredentialid : u32, pbcredentialid : *const u8) -> windows_sys::core::HRESULT);
+        pub type WebAuthNEncodeGetAssertionResponse =
+            unsafe extern "system" fn(
+                pgetassertionresponse: *const _WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE,
+                pcbresp: *mut u32,
+                ppbresp: *mut *mut u8,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNEncodeGetAssertionResponse(pgetassertionresponse : *const _WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE, pcbresp : *mut u32, ppbresp : *mut *mut u8) -> windows_sys::core::HRESULT);
+        pub type WebAuthNEncodeMakeCredentialResponse =
+            unsafe extern "system" fn(
+                pcredentialattestation: *const WEBAUTHN_CREDENTIAL_ATTESTATION,
+                pcbresp: *mut u32,
+                ppbresp: *mut *mut u8,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNEncodeMakeCredentialResponse(pcredentialattestation : *const WEBAUTHN_CREDENTIAL_ATTESTATION, pcbresp : *mut u32, ppbresp : *mut *mut u8) -> windows_sys::core::HRESULT);
         pub type WebAuthNFreeAssertion =
             unsafe extern "system" fn(pwebauthnassertion: *const WEBAUTHN_ASSERTION);
         windows_link::link!("webauthn.dll" "system" fn WebAuthNFreeAssertion(pwebauthnassertion : *const WEBAUTHN_ASSERTION));
@@ -104,6 +67,14 @@ pub mod Windows {
             pwebauthncredentialattestation: *const WEBAUTHN_CREDENTIAL_ATTESTATION,
         );
         windows_link::link!("webauthn.dll" "system" fn WebAuthNFreeCredentialAttestation(pwebauthncredentialattestation : *const WEBAUTHN_CREDENTIAL_ATTESTATION));
+        pub type WebAuthNFreeDecodedGetAssertionRequest = unsafe extern "system" fn(
+            pgetassertionrequest: *const _WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST,
+        );
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNFreeDecodedGetAssertionRequest(pgetassertionrequest : *const _WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST));
+        pub type WebAuthNFreeDecodedMakeCredentialRequest = unsafe extern "system" fn(
+            pmakecredentialrequest: *const _WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST,
+        );
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNFreeDecodedMakeCredentialRequest(pmakecredentialrequest : *const _WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST));
         pub type WebAuthNFreePlatformCredentialList = unsafe extern "system" fn(
             pcredentialdetailslist: *const WEBAUTHN_CREDENTIAL_DETAILS_LIST,
         );
@@ -132,6 +103,103 @@ pub mod Windows {
                 pbisuserverifyingplatformauthenticatoravailable: *mut windows_sys::core::BOOL,
             ) -> windows_sys::core::HRESULT;
         windows_link::link!("webauthn.dll" "system" fn WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable(pbisuserverifyingplatformauthenticatoravailable : *mut windows_sys::core::BOOL) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginAddAuthenticator = unsafe extern "system" fn ( ppluginaddauthenticatoroptions : *const _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS , pppluginaddauthenticatorresponse : *mut *mut _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE ) -> windows_sys::core::HRESULT ;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginAddAuthenticator(ppluginaddauthenticatoroptions : *const _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS, pppluginaddauthenticatorresponse : *mut *mut _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginAuthenticatorAddCredentials =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                ccredentialdetails: u32,
+                pcredentialdetails: *const _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginAuthenticatorAddCredentials(rclsid : *const windows_sys::core::GUID, ccredentialdetails : u32, pcredentialdetails : *const _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginAuthenticatorFreeCredentialDetailsArray =
+            unsafe extern "system" fn(
+                ccredentialdetails: u32,
+                pcredentialdetailsarray: *const _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS,
+            );
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginAuthenticatorFreeCredentialDetailsArray(ccredentialdetails : u32, pcredentialdetailsarray : *const _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS));
+        pub type WebAuthNPluginAuthenticatorGetAllCredentials =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                pccredentialdetails: *mut u32,
+                ppcredentialdetailsarray: *mut *mut _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginAuthenticatorGetAllCredentials(rclsid : *const windows_sys::core::GUID, pccredentialdetails : *mut u32, ppcredentialdetailsarray : *mut *mut _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginAuthenticatorRemoveAllCredentials =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginAuthenticatorRemoveAllCredentials(rclsid : *const windows_sys::core::GUID) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginAuthenticatorRemoveCredentials =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                ccredentialdetails: u32,
+                pcredentialdetails: *const _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginAuthenticatorRemoveCredentials(rclsid : *const windows_sys::core::GUID, ccredentialdetails : u32, pcredentialdetails : *const _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginFreeAddAuthenticatorResponse = unsafe extern "system" fn(
+            ppluginaddauthenticatorresponse: *const _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE,
+        );
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginFreeAddAuthenticatorResponse(ppluginaddauthenticatorresponse : *const _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE));
+        pub type WebAuthNPluginFreePublicKeyResponse =
+            unsafe extern "system" fn(pbopsignpubkey: *const u8);
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginFreePublicKeyResponse(pbopsignpubkey : *const u8));
+        pub type WebAuthNPluginFreeUserVerificationResponse =
+            unsafe extern "system" fn(ppbresponse: *const u8);
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginFreeUserVerificationResponse(ppbresponse : *const u8));
+        pub type WebAuthNPluginGetAuthenticatorState =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                pluginauthenticatorstate: *mut _PLUGIN_AUTHENTICATOR_STATE,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginGetAuthenticatorState(rclsid : *const windows_sys::core::GUID, pluginauthenticatorstate : *mut _PLUGIN_AUTHENTICATOR_STATE) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginGetOperationSigningPublicKey =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                pcbopsignpubkey: *mut u32,
+                ppbopsignpubkey: *mut *mut u8,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginGetOperationSigningPublicKey(rclsid : *const windows_sys::core::GUID, pcbopsignpubkey : *mut u32, ppbopsignpubkey : *mut *mut u8) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginGetUserVerificationCount =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                pdwverificationcount: *mut u32,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginGetUserVerificationCount(rclsid : *const windows_sys::core::GUID, pdwverificationcount : *mut u32) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginGetUserVerificationPublicKey =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+                pcbpublickey: *mut u32,
+                ppbpublickey: *mut *mut u8,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginGetUserVerificationPublicKey(rclsid : *const windows_sys::core::GUID, pcbpublickey : *mut u32, ppbpublickey : *mut *mut u8) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginPerformUserVerification =
+            unsafe extern "system" fn(
+                ppluginuserverification: *const _WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST,
+                pcbresponse: *mut u32,
+                ppbresponse: *mut *mut u8,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginPerformUserVerification(ppluginuserverification : *const _WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST, pcbresponse : *mut u32, ppbresponse : *mut *mut u8) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginRegisterStatusChangeCallback =
+            unsafe extern "system" fn(
+                callback: WEBAUTHN_PLUGIN_STATUS_CHANGE_CALLBACK,
+                context: *const core::ffi::c_void,
+                rclsid: *const windows_sys::core::GUID,
+                pdwregister: *mut u32,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginRegisterStatusChangeCallback(callback : WEBAUTHN_PLUGIN_STATUS_CHANGE_CALLBACK, context : *const core::ffi::c_void, rclsid : *const windows_sys::core::GUID, pdwregister : *mut u32) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginRemoveAuthenticator =
+            unsafe extern "system" fn(
+                rclsid: *const windows_sys::core::GUID,
+            ) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginRemoveAuthenticator(rclsid : *const windows_sys::core::GUID) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginUnregisterStatusChangeCallback =
+            unsafe extern "system" fn(pdwregister: *const u32) -> windows_sys::core::HRESULT;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginUnregisterStatusChangeCallback(pdwregister : *const u32) -> windows_sys::core::HRESULT);
+        pub type WebAuthNPluginUpdateAuthenticatorDetails = unsafe extern "system" fn ( ppluginupdateauthenticatordetails : *const _WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS ) -> windows_sys::core::HRESULT ;
+        windows_link::link!("webauthn.dll" "system" fn WebAuthNPluginUpdateAuthenticatorDetails(ppluginupdateauthenticatordetails : *const _WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS) -> windows_sys::core::HRESULT);
+        pub const AuthenticatorState_Disabled: _PLUGIN_AUTHENTICATOR_STATE = 0i32;
+        pub const AuthenticatorState_Enabled: _PLUGIN_AUTHENTICATOR_STATE = 1i32;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct CTAPCBOR_HYBRID_STORAGE_LINKED_DATA {
@@ -154,55 +222,10 @@ pub mod Windows {
         }
         pub const CTAPCBOR_HYBRID_STORAGE_LINKED_DATA_CURRENT_VERSION: u32 = 1u32;
         pub const CTAPCBOR_HYBRID_STORAGE_LINKED_DATA_VERSION_1: u32 = 1u32;
-        pub const IID_EXPERIMENTAL_IPluginAuthenticator: windows_sys::core::GUID =
-            windows_sys::core::GUID::from_u128(0xe6466e9a_b2f3_47c5_b88d_89bc14a8d998);
-        #[repr(C)]
-        pub struct EXPERIMENTAL_IPluginAuthenticator_Vtbl {
-            pub base__: windows_sys::core::IUnknown_Vtbl,
-            pub EXPERIMENTAL_PluginMakeCredential:
-                unsafe extern "system" fn(
-                    *mut core::ffi::c_void,
-                    *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_REQUEST,
-                    *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_RESPONSE,
-                ) -> windows_sys::core::HRESULT,
-            pub EXPERIMENTAL_PluginGetAssertion:
-                unsafe extern "system" fn(
-                    *mut core::ffi::c_void,
-                    *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_REQUEST,
-                    *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_RESPONSE,
-                ) -> windows_sys::core::HRESULT,
-            pub EXPERIMENTAL_PluginCancelOperation:
-                unsafe extern "system" fn(
-                    *mut core::ffi::c_void,
-                    *const _EXPERIMENTAL_WEBAUTHN_PLUGIN_CANCEL_OPERATION_REQUEST,
-                ) -> windows_sys::core::HRESULT,
-        }
-        pub const EXPERIMENTAL_WEBAUTHN_API_VERSION_8: u32 = 1008u32;
-        pub const EXPERIMENTAL_WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_8: u32 =
-            1008u32;
-        pub const EXPERIMENTAL_WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_8: u32 =
-            1008u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_7: u32 = 1007u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CREDENTIAL_DETAILS_VERSION_3: u32 = 1003u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_CURRENT_VERSION: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_VERSION_1: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY_CURRENT_VERSION: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY_VERSION_1: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST_CURRENT_VERSION: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST_VERSION_1: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION_CURRENT_VERSION: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION_VERSION_1: u32 = 1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST_CURRENT_VERSION: u32 =
-            1u32;
-        pub const EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST_VERSION_1: u32 = 1u32;
-        pub const GetPubKey: _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = 3i32;
-        pub const GetUvCount: _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = 2i32;
-        pub const PerformUv: _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = 1i32;
-        pub const PluginAuthenticatorState_Disabled: _EXPERIMENTAL_PLUGIN_AUTHENTICATOR_STATE =
-            1i32;
-        pub const PluginAuthenticatorState_Enabled: _EXPERIMENTAL_PLUGIN_AUTHENTICATOR_STATE = 2i32;
-        pub const PluginAuthenticatorState_Unknown: _EXPERIMENTAL_PLUGIN_AUTHENTICATOR_STATE = 0i32;
-        pub const WEBAUTHN_API_CURRENT_VERSION: u32 = 7u32;
+        pub const GetPublicKey: _WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = 3i32;
+        pub const GetUserVerificationCount: _WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = 2i32;
+        pub const PerformUserVerification: _WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = 1i32;
+        pub const WEBAUTHN_API_CURRENT_VERSION: u32 = 9u32;
         pub const WEBAUTHN_API_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_API_VERSION_2: u32 = 2u32;
         pub const WEBAUTHN_API_VERSION_3: u32 = 3u32;
@@ -210,6 +233,8 @@ pub mod Windows {
         pub const WEBAUTHN_API_VERSION_5: u32 = 5u32;
         pub const WEBAUTHN_API_VERSION_6: u32 = 6u32;
         pub const WEBAUTHN_API_VERSION_7: u32 = 7u32;
+        pub const WEBAUTHN_API_VERSION_8: u32 = 8u32;
+        pub const WEBAUTHN_API_VERSION_9: u32 = 9u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct WEBAUTHN_ASSERTION {
@@ -229,18 +254,23 @@ pub mod Windows {
             pub dwUsedTransport: u32,
             pub cbUnsignedExtensionOutputs: u32,
             pub pbUnsignedExtensionOutputs: *mut u8,
+            pub cbClientDataJSON: u32,
+            pub pbClientDataJSON: *mut u8,
+            pub cbAuthenticationResponseJSON: u32,
+            pub pbAuthenticationResponseJSON: *mut u8,
         }
         impl Default for WEBAUTHN_ASSERTION {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
-        pub const WEBAUTHN_ASSERTION_CURRENT_VERSION: u32 = 5u32;
+        pub const WEBAUTHN_ASSERTION_CURRENT_VERSION: u32 = 6u32;
         pub const WEBAUTHN_ASSERTION_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_ASSERTION_VERSION_2: u32 = 2u32;
         pub const WEBAUTHN_ASSERTION_VERSION_3: u32 = 3u32;
         pub const WEBAUTHN_ASSERTION_VERSION_4: u32 = 4u32;
         pub const WEBAUTHN_ASSERTION_VERSION_5: u32 = 5u32;
+        pub const WEBAUTHN_ASSERTION_VERSION_6: u32 = 6u32;
         pub const WEBAUTHN_ATTESTATION_CONVEYANCE_PREFERENCE_ANY: u32 = 0u32;
         pub const WEBAUTHN_ATTESTATION_CONVEYANCE_PREFERENCE_DIRECT: u32 = 3u32;
         pub const WEBAUTHN_ATTESTATION_CONVEYANCE_PREFERENCE_INDIRECT: u32 = 2u32;
@@ -261,6 +291,10 @@ pub mod Windows {
         pub const WEBAUTHN_AUTHENTICATOR_ATTACHMENT_CROSS_PLATFORM: u32 = 2u32;
         pub const WEBAUTHN_AUTHENTICATOR_ATTACHMENT_CROSS_PLATFORM_U2F_V2: u32 = 3u32;
         pub const WEBAUTHN_AUTHENTICATOR_ATTACHMENT_PLATFORM: u32 = 1u32;
+        pub const WEBAUTHN_AUTHENTICATOR_DETAILS_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_AUTHENTICATOR_DETAILS_OPTIONS_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_AUTHENTICATOR_DETAILS_OPTIONS_VERSION_1: u32 = 1u32;
+        pub const WEBAUTHN_AUTHENTICATOR_DETAILS_VERSION_1: u32 = 1u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
@@ -284,15 +318,20 @@ pub mod Windows {
             pub bAutoFill: windows_sys::core::BOOL,
             pub cbJsonExt: u32,
             pub pbJsonExt: *mut u8,
-            pub EXPERIMENTAL_cCredentialHints: u32,
-            pub EXPERIMENTAL_ppwszCredentialHints: *const windows_sys::core::PCWSTR,
+            pub cCredentialHints: u32,
+            pub ppwszCredentialHints: *const windows_sys::core::PCWSTR,
+            pub pwszRemoteWebOrigin: windows_sys::core::PCWSTR,
+            pub cbPublicKeyCredentialRequestOptionsJSON: u32,
+            pub pbPublicKeyCredentialRequestOptionsJSON: *mut u8,
+            pub cbAuthenticatorId: u32,
+            pub pbAuthenticatorId: *mut u8,
         }
         impl Default for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
-        pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_CURRENT_VERSION: u32 = 7u32;
+        pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_CURRENT_VERSION: u32 = 9u32;
         pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_2: u32 = 2u32;
         pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_3: u32 = 3u32;
@@ -300,6 +339,8 @@ pub mod Windows {
         pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_5: u32 = 5u32;
         pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_6: u32 = 6u32;
         pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_7: u32 = 7u32;
+        pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_8: u32 = 8u32;
+        pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_9: u32 = 9u32;
         pub const WEBAUTHN_AUTHENTICATOR_HMAC_SECRET_VALUES_FLAG: u32 = 1048576u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
@@ -323,17 +364,22 @@ pub mod Windows {
             pub pLinkedDevice: *mut CTAPCBOR_HYBRID_STORAGE_LINKED_DATA,
             pub cbJsonExt: u32,
             pub pbJsonExt: *mut u8,
-            pub EXPERIMENTAL_pPRFGlobalEval: *mut WEBAUTHN_HMAC_SECRET_SALT,
-            pub EXPERIMENTAL_cCredentialHints: u32,
-            pub EXPERIMENTAL_ppwszCredentialHints: *const windows_sys::core::PCWSTR,
-            pub EXPERIMENTAL_bThirdPartyPayment: windows_sys::core::BOOL,
+            pub pPRFGlobalEval: *mut WEBAUTHN_HMAC_SECRET_SALT,
+            pub cCredentialHints: u32,
+            pub ppwszCredentialHints: *const windows_sys::core::PCWSTR,
+            pub bThirdPartyPayment: windows_sys::core::BOOL,
+            pub pwszRemoteWebOrigin: windows_sys::core::PCWSTR,
+            pub cbPublicKeyCredentialCreationOptionsJSON: u32,
+            pub pbPublicKeyCredentialCreationOptionsJSON: *mut u8,
+            pub cbAuthenticatorId: u32,
+            pub pbAuthenticatorId: *mut u8,
         }
         impl Default for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
-        pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_CURRENT_VERSION: u32 = 7u32;
+        pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_CURRENT_VERSION: u32 = 9u32;
         pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_2: u32 = 2u32;
         pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_3: u32 = 3u32;
@@ -341,6 +387,8 @@ pub mod Windows {
         pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_5: u32 = 5u32;
         pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_6: u32 = 6u32;
         pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_7: u32 = 7u32;
+        pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_8: u32 = 8u32;
+        pub const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS_VERSION_9: u32 = 9u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct WEBAUTHN_CLIENT_DATA {
@@ -457,21 +505,28 @@ pub mod Windows {
             pub bPrfEnabled: windows_sys::core::BOOL,
             pub cbUnsignedExtensionOutputs: u32,
             pub pbUnsignedExtensionOutputs: *mut u8,
-            pub EXPERIMENTAL_pHmacSecret: *mut WEBAUTHN_HMAC_SECRET_SALT,
-            pub EXPERIMENTAL_bThirdPartyPayment: windows_sys::core::BOOL,
+            pub pHmacSecret: *mut WEBAUTHN_HMAC_SECRET_SALT,
+            pub bThirdPartyPayment: windows_sys::core::BOOL,
+            pub dwTransports: u32,
+            pub cbClientDataJSON: u32,
+            pub pbClientDataJSON: *mut u8,
+            pub cbRegistrationResponseJSON: u32,
+            pub pbRegistrationResponseJSON: *mut u8,
         }
         impl Default for WEBAUTHN_CREDENTIAL_ATTESTATION {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
-        pub const WEBAUTHN_CREDENTIAL_ATTESTATION_CURRENT_VERSION: u32 = 6u32;
+        pub const WEBAUTHN_CREDENTIAL_ATTESTATION_CURRENT_VERSION: u32 = 8u32;
         pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_2: u32 = 2u32;
         pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_3: u32 = 3u32;
         pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_4: u32 = 4u32;
         pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_5: u32 = 5u32;
         pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_6: u32 = 6u32;
+        pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_7: u32 = 7u32;
+        pub const WEBAUTHN_CREDENTIAL_ATTESTATION_VERSION_8: u32 = 8u32;
         pub const WEBAUTHN_CREDENTIAL_CURRENT_VERSION: u32 = 1u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
@@ -483,17 +538,18 @@ pub mod Windows {
             pub pUserInformation: *mut WEBAUTHN_USER_ENTITY_INFORMATION,
             pub bRemovable: windows_sys::core::BOOL,
             pub bBackedUp: windows_sys::core::BOOL,
-            pub EXPERIMENTAL_pwszAuthenticatorName: windows_sys::core::PCWSTR,
-            pub EXPERIMENTAL_cbAuthenticatorLogo: u32,
-            pub EXPERIMENTAL_pbAuthenticatorLogo: *mut u8,
-            pub EXPERIMENTAL_bThirdPartyPayment: windows_sys::core::BOOL,
+            pub pwszAuthenticatorName: windows_sys::core::PCWSTR,
+            pub cbAuthenticatorLogo: u32,
+            pub pbAuthenticatorLogo: *mut u8,
+            pub bThirdPartyPayment: windows_sys::core::BOOL,
+            pub dwTransports: u32,
         }
         impl Default for WEBAUTHN_CREDENTIAL_DETAILS {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
-        pub const WEBAUTHN_CREDENTIAL_DETAILS_CURRENT_VERSION: u32 = 2u32;
+        pub const WEBAUTHN_CREDENTIAL_DETAILS_CURRENT_VERSION: u32 = 4u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct WEBAUTHN_CREDENTIAL_DETAILS_LIST {
@@ -507,6 +563,8 @@ pub mod Windows {
         }
         pub const WEBAUTHN_CREDENTIAL_DETAILS_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_CREDENTIAL_DETAILS_VERSION_2: u32 = 2u32;
+        pub const WEBAUTHN_CREDENTIAL_DETAILS_VERSION_3: u32 = 3u32;
+        pub const WEBAUTHN_CREDENTIAL_DETAILS_VERSION_4: u32 = 4u32;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct WEBAUTHN_CREDENTIAL_EX {
@@ -584,14 +642,37 @@ pub mod Windows {
                 unsafe { core::mem::zeroed() }
             }
         }
+        pub const WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_VERSION_1: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY_VERSION_1: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST_VERSION_1: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION_VERSION_1: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST_CURRENT_VERSION: u32 = 1u32;
+        pub const WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST_VERSION_1: u32 = 1u32;
         pub const WEBAUTHN_CTAP_ONE_HMAC_SECRET_LENGTH: u32 = 32u32;
         pub const WEBAUTHN_CTAP_TRANSPORT_BLE: u32 = 4u32;
-        pub const WEBAUTHN_CTAP_TRANSPORT_FLAGS_MASK: u32 = 63u32;
+        pub const WEBAUTHN_CTAP_TRANSPORT_BLE_STRING: windows_sys::core::PCSTR =
+            windows_sys::core::s!("ble");
+        pub const WEBAUTHN_CTAP_TRANSPORT_FLAGS_MASK: u32 = 127u32;
         pub const WEBAUTHN_CTAP_TRANSPORT_HYBRID: u32 = 32u32;
+        pub const WEBAUTHN_CTAP_TRANSPORT_HYBRID_STRING: windows_sys::core::PCSTR =
+            windows_sys::core::s!("hybrid");
         pub const WEBAUTHN_CTAP_TRANSPORT_INTERNAL: u32 = 16u32;
+        pub const WEBAUTHN_CTAP_TRANSPORT_INTERNAL_STRING: windows_sys::core::PCSTR =
+            windows_sys::core::s!("internal");
         pub const WEBAUTHN_CTAP_TRANSPORT_NFC: u32 = 2u32;
+        pub const WEBAUTHN_CTAP_TRANSPORT_NFC_STRING: windows_sys::core::PCSTR =
+            windows_sys::core::s!("nfc");
+        pub const WEBAUTHN_CTAP_TRANSPORT_SMART_CARD: u32 = 64u32;
+        pub const WEBAUTHN_CTAP_TRANSPORT_SMART_CARD_STRING: windows_sys::core::PCSTR =
+            windows_sys::core::s!("smart-card");
         pub const WEBAUTHN_CTAP_TRANSPORT_TEST: u32 = 8u32;
         pub const WEBAUTHN_CTAP_TRANSPORT_USB: u32 = 1u32;
+        pub const WEBAUTHN_CTAP_TRANSPORT_USB_STRING: windows_sys::core::PCSTR =
+            windows_sys::core::s!("usb");
         pub const WEBAUTHN_ENTERPRISE_ATTESTATION_NONE: u32 = 0u32;
         pub const WEBAUTHN_ENTERPRISE_ATTESTATION_PLATFORM_MANAGED: u32 = 2u32;
         pub const WEBAUTHN_ENTERPRISE_ATTESTATION_VENDOR_FACILITATED: u32 = 1u32;
@@ -675,6 +756,8 @@ pub mod Windows {
         pub const WEBAUTHN_LARGE_BLOB_SUPPORT_PREFERRED: u32 = 2u32;
         pub const WEBAUTHN_LARGE_BLOB_SUPPORT_REQUIRED: u32 = 1u32;
         pub const WEBAUTHN_MAX_USER_ID_LENGTH: u32 = 64u32;
+        pub type WEBAUTHN_PLUGIN_STATUS_CHANGE_CALLBACK =
+            Option<unsafe extern "system" fn(context: *mut core::ffi::c_void)>;
         #[repr(C)]
         #[derive(Clone, Copy)]
         pub struct WEBAUTHN_RP_ENTITY_INFORMATION {
@@ -724,10 +807,42 @@ pub mod Windows {
                 unsafe { core::mem::zeroed() }
             }
         }
-        pub type _EXPERIMENTAL_PLUGIN_AUTHENTICATOR_STATE = i32;
+        pub type _PLUGIN_AUTHENTICATOR_STATE = i32;
+        #[repr(C)]
+        #[derive(Clone, Copy)]
+        pub struct _WEBAUTHN_AUTHENTICATOR_DETAILS {
+            pub dwVersion: u32,
+            pub cbAuthenticatorId: u32,
+            pub pbAuthenticatorId: *mut u8,
+            pub pwszAuthenticatorName: windows_sys::core::PCWSTR,
+            pub cbAuthenticatorLogo: u32,
+            pub pbAuthenticatorLogo: *mut u8,
+            pub bLocked: windows_sys::core::BOOL,
+        }
+        impl Default for _WEBAUTHN_AUTHENTICATOR_DETAILS {
+            fn default() -> Self {
+                unsafe { core::mem::zeroed() }
+            }
+        }
+        #[repr(C)]
+        #[derive(Clone, Copy)]
+        pub struct _WEBAUTHN_AUTHENTICATOR_DETAILS_LIST {
+            pub cAuthenticatorDetails: u32,
+            pub ppAuthenticatorDetails: *mut *mut _WEBAUTHN_AUTHENTICATOR_DETAILS,
+        }
+        impl Default for _WEBAUTHN_AUTHENTICATOR_DETAILS_LIST {
+            fn default() -> Self {
+                unsafe { core::mem::zeroed() }
+            }
+        }
         #[repr(C)]
         #[derive(Clone, Copy, Default)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS {
+        pub struct _WEBAUTHN_AUTHENTICATOR_DETAILS_OPTIONS {
+            pub dwVersion: u32,
+        }
+        #[repr(C)]
+        #[derive(Clone, Copy, Default)]
+        pub struct _WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS {
             pub dwVersion: u32,
             pub lUp: i32,
             pub lUv: i32,
@@ -735,7 +850,7 @@ pub mod Windows {
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY {
+        pub struct _WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY {
             pub dwVersion: u32,
             pub lKty: i32,
             pub lAlg: i32,
@@ -745,14 +860,14 @@ pub mod Windows {
             pub cbY: u32,
             pub pbY: *mut u8,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY {
+        impl Default for _WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST {
+        pub struct _WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST {
             pub dwVersion: u32,
             pub pwszRpId: windows_sys::core::PCWSTR,
             pub cbRpId: u32,
@@ -762,11 +877,11 @@ pub mod Windows {
             pub CredentialList: WEBAUTHN_CREDENTIAL_LIST,
             pub cbCborExtensionsMap: u32,
             pub pbCborExtensionsMap: *mut u8,
-            pub pAuthenticatorOptions: *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS,
+            pub pAuthenticatorOptions: *mut _WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS,
             pub fEmptyPinAuth: windows_sys::core::BOOL,
             pub cbPinAuth: u32,
             pub pbPinAuth: *mut u8,
-            pub pHmacSaltExtension: *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION,
+            pub pHmacSaltExtension: *mut _WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION,
             pub cbHmacSecretSaltValues: u32,
             pub pbHmacSecretSaltValues: *mut u8,
             pub dwPinProtocol: u32,
@@ -779,14 +894,14 @@ pub mod Windows {
             pub cbJsonExt: u32,
             pub pbJsonExt: *mut u8,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST {
+        impl Default for _WEBAUTHN_CTAPCBOR_GET_ASSERTION_REQUEST {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE {
+        pub struct _WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE {
             pub WebAuthNAssertion: WEBAUTHN_ASSERTION,
             pub pUserInformation: *mut WEBAUTHN_USER_ENTITY_INFORMATION,
             pub dwNumberOfCredentials: u32,
@@ -796,29 +911,29 @@ pub mod Windows {
             pub cbUnsignedExtensionOutputs: u32,
             pub pbUnsignedExtensionOutputs: *mut u8,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE {
+        impl Default for _WEBAUTHN_CTAPCBOR_GET_ASSERTION_RESPONSE {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION {
+        pub struct _WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION {
             pub dwVersion: u32,
-            pub pKeyAgreement: *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY,
+            pub pKeyAgreement: *mut _WEBAUTHN_CTAPCBOR_ECC_PUBLIC_KEY,
             pub cbEncryptedSalt: u32,
             pub pbEncryptedSalt: *mut u8,
             pub cbSaltAuth: u32,
             pub pbSaltAuth: *mut u8,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION {
+        impl Default for _WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST {
+        pub struct _WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST {
             pub dwVersion: u32,
             pub cbRpId: u32,
             pub pbRpId: *mut u8,
@@ -830,12 +945,12 @@ pub mod Windows {
             pub CredentialList: WEBAUTHN_CREDENTIAL_LIST,
             pub cbCborExtensionsMap: u32,
             pub pbCborExtensionsMap: *mut u8,
-            pub pAuthenticatorOptions: *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS,
+            pub pAuthenticatorOptions: *mut _WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS,
             pub fEmptyPinAuth: windows_sys::core::BOOL,
             pub cbPinAuth: u32,
             pub pbPinAuth: *mut u8,
             pub lHmacSecretExt: i32,
-            pub pHmacSecretMcExtension: *mut _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION,
+            pub pHmacSecretMcExtension: *mut _WEBAUTHN_CTAPCBOR_HMAC_SALT_EXTENSION,
             pub lPrfExt: i32,
             pub cbHmacSecretSaltValues: u32,
             pub pbHmacSecretSaltValues: *mut u8,
@@ -850,143 +965,85 @@ pub mod Windows {
             pub cbJsonExt: u32,
             pub pbJsonExt: *mut u8,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST {
+        impl Default for _WEBAUTHN_CTAPCBOR_MAKE_CREDENTIAL_REQUEST {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS {
+        pub struct _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS {
             pub pwszAuthenticatorName: windows_sys::core::PCWSTR,
-            pub pwszPluginClsId: windows_sys::core::PCWSTR,
+            pub rclsid: *const windows_sys::core::GUID,
             pub pwszPluginRpId: windows_sys::core::PCWSTR,
-            pub pwszLightThemeLogo: windows_sys::core::PCWSTR,
-            pub pwszDarkThemeLogo: windows_sys::core::PCWSTR,
+            pub pwszLightThemeLogoSvg: windows_sys::core::PCWSTR,
+            pub pwszDarkThemeLogoSvg: windows_sys::core::PCWSTR,
             pub cbAuthenticatorInfo: u32,
-            pub pbAuthenticatorInfo: *mut u8,
+            pub pbAuthenticatorInfo: *const u8,
+            pub cSupportedRpIds: u32,
+            pub ppwszSupportedRpIds: *const windows_sys::core::PCWSTR,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS {
+        impl Default for _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE {
+        pub struct _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE {
             pub cbOpSignPubKey: u32,
             pub pbOpSignPubKey: *mut u8,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE {
+        impl Default for _WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_RESPONSE {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_CANCEL_OPERATION_REQUEST {
-            pub transactionId: windows_sys::core::GUID,
-            pub cbRequestSignature: u32,
-            pub pbRequestSignature: *mut u8,
-        }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_CANCEL_OPERATION_REQUEST {
-            fn default() -> Self {
-                unsafe { core::mem::zeroed() }
-            }
-        }
-        #[repr(C)]
-        #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS {
+        pub struct _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS {
             pub cbCredentialId: u32,
-            pub pbCredentialId: *mut u8,
-            pub pwszRpId: windows_sys::core::PWSTR,
-            pub pwszRpName: windows_sys::core::PWSTR,
+            pub pbCredentialId: *const u8,
+            pub pwszRpId: windows_sys::core::PCWSTR,
+            pub pwszRpName: windows_sys::core::PCWSTR,
             pub cbUserId: u32,
-            pub pbUserId: *mut u8,
-            pub pwszUserName: windows_sys::core::PWSTR,
-            pub pwszUserDisplayName: windows_sys::core::PWSTR,
+            pub pbUserId: *const u8,
+            pub pwszUserName: windows_sys::core::PCWSTR,
+            pub pwszUserDisplayName: windows_sys::core::PCWSTR,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS {
+        impl Default for _WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }
         }
+        pub type _WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = i32;
         #[repr(C)]
         #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST {
-            pub pwszPluginClsId: windows_sys::core::PWSTR,
-            pub cCredentialDetails: u32,
-            pub pCredentialDetails: *mut *mut _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS,
-        }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST {
-            fn default() -> Self {
-                unsafe { core::mem::zeroed() }
-            }
-        }
-        #[repr(C)]
-        #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_REQUEST {
-            pub hWnd: super::Win32::Foundation::HWND,
-            pub transactionId: windows_sys::core::GUID,
-            pub cbRequestSignature: u32,
-            pub pbRequestSignature: *mut u8,
-            pub cbEncodedRequest: u32,
-            pub pbEncodedRequest: *mut u8,
-        }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_REQUEST {
-            fn default() -> Self {
-                unsafe { core::mem::zeroed() }
-            }
-        }
-        #[repr(C)]
-        #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_RESPONSE {
-            pub cbEncodedResponse: u32,
-            pub pbEncodedResponse: *mut u8,
-        }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_OPERATION_RESPONSE {
-            fn default() -> Self {
-                unsafe { core::mem::zeroed() }
-            }
-        }
-        #[repr(C)]
-        #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV {
-            pub hwnd: super::Win32::Foundation::HWND,
-            pub transactionId: *mut windows_sys::core::GUID,
-            pub r#type: _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE,
-            pub pwszUsername: windows_sys::core::PCWSTR,
-            pub pwszContext: windows_sys::core::PCWSTR,
-        }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV {
-            fn default() -> Self {
-                unsafe { core::mem::zeroed() }
-            }
-        }
-        pub type _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_OPERATION_TYPE = i32;
-        #[repr(C)]
-        #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE {
-            pub cbResponse: u32,
-            pub pbResponse: *mut u8,
-        }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE {
-            fn default() -> Self {
-                unsafe { core::mem::zeroed() }
-            }
-        }
-        #[repr(C)]
-        #[derive(Clone, Copy)]
-        pub struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS {
+        pub struct _WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS {
             pub pwszAuthenticatorName: windows_sys::core::PCWSTR,
-            pub pwszPluginClsId: windows_sys::core::PCWSTR,
-            pub pwszNewPluginClsId: windows_sys::core::PCWSTR,
-            pub pwszLightThemeLogo: windows_sys::core::PCWSTR,
-            pub pwszDarkThemeLogo: windows_sys::core::PCWSTR,
+            pub rclsid: *const windows_sys::core::GUID,
+            pub rclsidNew: *const windows_sys::core::GUID,
+            pub pwszLightThemeLogoSvg: windows_sys::core::PCWSTR,
+            pub pwszDarkThemeLogoSvg: windows_sys::core::PCWSTR,
             pub cbAuthenticatorInfo: u32,
-            pub pbAuthenticatorInfo: *mut u8,
+            pub pbAuthenticatorInfo: *const u8,
+            pub cSupportedRpIds: u32,
+            pub ppwszSupportedRpIds: *const windows_sys::core::PCWSTR,
         }
-        impl Default for _EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS {
+        impl Default for _WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS {
+            fn default() -> Self {
+                unsafe { core::mem::zeroed() }
+            }
+        }
+        #[repr(C)]
+        #[derive(Clone, Copy)]
+        pub struct _WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST {
+            pub hwnd: super::Win32::Foundation::HWND,
+            pub rguidTransactionId: *const windows_sys::core::GUID,
+            pub pwszUsername: windows_sys::core::PCWSTR,
+            pub pwszDisplayHint: windows_sys::core::PCWSTR,
+        }
+        impl Default for _WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST {
             fn default() -> Self {
                 unsafe { core::mem::zeroed() }
             }

@@ -4,6 +4,3 @@ members = ["bindings", "app/src-tauri", "gen-bindings"]
 
 [workspace.dependencies]
 rusty-contoso-passkeys-bindings = { path = "bindings" }
-
-[patch.crates-io]
-windows-bindgen = { path = "../windows-rs/crates/libs/bindgen" }

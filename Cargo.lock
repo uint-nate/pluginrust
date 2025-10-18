@@ -4662,6 +4662,7 @@ dependencies = [
 [[package]]
 name = "windows-bindgen"
 version = "0.65.0"
+source = "git+https://github.com/microsoft/windows-rs.git#ad9719656bde15cbac1a86ec6b60b0b5c6bcdaa6"
 dependencies = [
  "serde",
  "serde_json",
@@ -4745,12 +4746,13 @@ checksum = "5e6ad25900d524eaabdbbb96d20b4311e1e7ae1699af4fb28c17ae66c80d798a"
 [[package]]
 name = "windows-link"
 version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
 
 [[package]]
 name = "windows-link"
 version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
+source = "git+https://github.com/microsoft/windows-rs.git#ad9719656bde15cbac1a86ec6b60b0b5c6bcdaa6"
 
 [[package]]
 name = "windows-numerics"
@@ -4894,8 +4896,9 @@ dependencies = [
 [[package]]
 name = "windows-threading"
 version = "0.2.1"
+source = "git+https://github.com/microsoft/windows-rs.git#ad9719656bde15cbac1a86ec6b60b0b5c6bcdaa6"
 dependencies = [
- "windows-link 0.2.1",
+ "windows-link 0.2.1 (git+https://github.com/microsoft/windows-rs.git)",
 ]
 
 [[package]]

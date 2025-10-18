@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies.windows-bindgen]
-version = "0.65.0"
+git = "https://github.com/microsoft/windows-rs.git"

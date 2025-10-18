@@ -1,0 +1,3 @@
+[submodule "gen-bindings/.metadata/webauthn"]
+	path = gen-bindings/.metadata/webauthn
+	url = https://github.com/microsoft/webauthn.git

@@ -2,5 +2,6 @@
 #include "windows.fixed.h"
 #include <sdkddkver.h>
 
-#include "webauthnpriv.h"
+#include "webauthn.h"
+#include "webauthnplugin.h"
 #include "pluginauthenticator.h"
